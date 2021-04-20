@@ -27,7 +27,10 @@ client.connect(err => {
        pictureCollection.insertOne(service)
        .then(result=>{
            res.send(result.insertedCount > 0)
+           
        })
+      console.log(service);
+       
    })
 
 ///patch
@@ -82,7 +85,7 @@ app.get('/specificOrder',(req,res)=>{
        pictureCollection.find({date:date})
       .toArray((err,documents)=>{
           res.send(documents)
-          console.log('documents item',documents);
+         
       })
    })
 
@@ -103,7 +106,7 @@ app.get('/specificOrder',(req,res)=>{
        console.log(newEvent);
        imagesCollection.insertOne(newEvent)
        .then(result=>{
-           console.log('result',result);
+           
            res.send(result.insertedCount > 0)
        })
    })
@@ -113,7 +116,7 @@ app.get('/specificOrder',(req,res)=>{
   app.get('/AddBlogs',(req,res)=>{
     BlogsCollection.find()
     .toArray((err,items)=>{
-        console.log('items',items)
+     
       res.send(items)
     })
   })
@@ -125,7 +128,7 @@ app.get('/specificOrder',(req,res)=>{
    
        BlogsCollection.insertOne(newBlog)
        .then(result=>{
-           console.log('result',result);
+          
            res.send(result.insertedCount > 0)
        })
    })
@@ -135,7 +138,7 @@ app.get('/specificOrder',(req,res)=>{
 app.get('/addService',(req,res)=>{
     addServiceCollection.find()
     .toArray((err,items)=>{
-        console.log('items',items)
+       
       res.send(items)
     })
   })
