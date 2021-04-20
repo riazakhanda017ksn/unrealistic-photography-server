@@ -146,9 +146,9 @@ app.get('/addService',(req,res)=>{
 
 
    app.post('/AddedNewService',(req,res)=>{
-       const service=req.body;
+       const services=req.body;
    
-       addServiceCollection.insertOne(service)
+       addServiceCollection.insertOne(services)
        .then(result=>{
            console.log('result',result);
            res.send(result.insertedCount > 0)
